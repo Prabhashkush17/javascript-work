@@ -1,33 +1,99 @@
-let h1 = document.getElementById("demo");
-h1.style.color = "red"
-h1.style.backgroundColor = "yellow";
+const fruits = [ "Apple", "Cherry", "kiwi", "grapes"];
 
-// color, background color, border, border radius, font size,
-// font style - italic
+let text = "<ul>";
+fruits.map(function(x){
+    text+=`<li>${x}</li>`;
+});
 
-let para = document.getElementById("para")
-// para.style.color = "green";
-// para.style.background-Color = "yellow";
-// para.style.border = "yellow";
-// para.style.borderRadius = "yellow";
+text+= "</ul>"
 
-para.style.cssText = "color : pink; background-color: blue;border:10px solid red; border-radius: 40px, font-size:40px, font-style: italic;";
+document.getElementById("demo").innerHTML = text;
 
-// function change(){
-// let input = document.getElementById("myinput")
-// input.value = "delhi";
-// }
-function printtext(){
-    let input = document.getElementById("myinput").value
-    let h1 = document.getElementById("newtext");
-    h1.innerHTML = input;
+const persons = [
+{
+    name : "john",
+    age : 23,
+},
+
+{
+    name : "harry",
+    age : 32,
+},
+
+{
+    name : "odin",
+    age : 53,
 }
+];
 
+let table = `
+<table border=1px>
+<tr>
+<th>Name</th>
+<th>age</th>
+</tr>
+`;
 
-// the addEventListener() method attaches an event handler to the specified element.
+persons.map((x)=>{
+    table +=`
+    <tr>
+    <td>${x.name}</td>
+    <td>${x.age}</td>
+    </tr>
+    `;
+});
 
-let button = document.getElementById("btn");
-button.addEventListener("click", function(){
-    console.log("button clicked");
-    h1.style.color = "blue";
-})
+table += "</table>";
+
+document.getElementById("mytable").innerHTML = table;
+
+// filter..
+// the filter() method 
+
+const numbers = [10, 20, 30, 3254, 35, 53, 9];
+
+const newNumbers = numbers.filter((x)=>{
+    if (x > 30){
+        return x;
+    }
+});
+
+console.log(newNumbers);
+
+const students = [
+    {
+        name : "ram",
+        grade : 96
+    },
+
+    {
+        name : "priya",
+        grade : 85
+    },
+
+    {
+        name : "mohan",
+        grade : 100
+    },
+
+    {
+        name : "yash",
+        grade : 65
+    },
+
+    {
+        name : "sukesh",
+        grade : 90
+    },
+];
+
+const studentsGrade = students.filter((x)=>{
+    if (x.grade > 90){
+        return x;
+    }
+});
+
+console.log(studentsGrade);
+
+// reduce....
+
