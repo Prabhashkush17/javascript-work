@@ -1,99 +1,98 @@
-const fruits = [ "Apple", "Cherry", "kiwi", "grapes"];
+//1. Double each number in the array using map().
+ const numbers = [1, 2, 3];
+ const doubledNumber = numbers.map(x => x*2);
+ console.log(doubledNumber);
 
-let text = "<ul>";
-fruits.map(function(x){
-    text+=`<li>${x}</li>`;
-});
+ //  2. Convert array of strings to uppercase.
+ const names = ['alice', 'bob'];
+ const uppercaseName = names.map(name => name.toUpperCase());
+console.log(uppercaseName);
 
-text+= "</ul>"
 
-document.getElementById("demo").innerHTML = text;
+// 3.. Extract the 'name' property from each object.
+ const users = [{name: 'Tom'}, {name: 'Jerry'}];
+ const New = users.map(user => user.name);
+ console.log(New);
 
-const persons = [
-{
-    name : "john",
-    age : 23,
-},
+ //  5. Return the lengths of each word.
+ const words = ['cat', 'elephant'];
+ const length = words.map(word => word.length);
+ console.log(length);
 
-{
-    name : "harry",
-    age : 32,
-},
+ // 6. Filter even numbers.
+ const numbers1 = [1, 2, 3, 4];
+ const evenNumbers = numbers1.filter(x => x%2===0);
+ console.log(evenNumbers);
 
-{
-    name : "odin",
-    age : 53,
-}
-];
+ // 7. Filter numbers greater than 10.
+ const nums = [5, 12, 8];
+ const graterNum = nums.filter(x => x>10);
+ console.log(graterNum);
 
-let table = `
-<table border=1px>
-<tr>
-<th>Name</th>
-<th>age</th>
-</tr>
-`;
+ // 8. Filter strings with more than 4 characters.
+ const words1 = ['dog', 'horse', 'lion'];
+ const filteredWord = words1.filter(char => char.length > 4);
+ console.log(filteredWord);
 
-persons.map((x)=>{
-    table +=`
-    <tr>
-    <td>${x.name}</td>
-    <td>${x.age}</td>
-    </tr>
-    `;
-});
+ //  9. Filter objects with active status.
+ const users2 = [{active: true}, {active: false}];
+ const users3 = users2.filter(x => x.active);
+ console.log(users3);
 
-table += "</table>";
+ //10. Filter numbers divisible by 3.
+ const nums5 = [3, 6, 7, 9];
+ const num6 = nums5.filter(x => x%3===0);
+ console.log(num6);
 
-document.getElementById("mytable").innerHTML = table;
+ //  11. Sort numbers ascending.
+ const nums7 = [3, 1, 4];
+ const num7 = nums7.sort((a, b) => a - b,);
+ console.log(num7)
 
-// filter..
-// the filter() method 
+ // 12. Sort numbers descending.
+ const nums8 = [5, 2, 8];
+ const num8 = nums8.sort((a, b) => b-a);
+ console.log(num8);
 
-const numbers = [10, 20, 30, 3254, 35, 53, 9];
+ // 13.Sort strings alphabetically.
+ const fruits = ['banana', 'apple'];
+ const fruit = fruits.sort();
+ console.log(fruit);
 
-const newNumbers = numbers.filter((x)=>{
-    if (x > 30){
-        return x;
-    }
-});
+ //  14. Sort by object property.
+ const items = [{age: 2}, {age: 1}];
+ const items2 = items.sort((a, b) => a.age - b.age);
+ console.log(items2);
 
-console.log(newNumbers);
+ // 15. Sort by name descending.
+ const users5 = [{name: 'Bob'}, {name: 'Alice'}];
+ const user5 = users5.sort((a, b) => b.name - a.name);
+ console.log(user5);
 
-const students = [
-    {
-        name : "ram",
-        grade : 96
-    },
+ //  16. Sum all numbers.
+ const nums6 = [1, 2, 3];
+ const num9 = nums6.reduce((a ,c) => a+c , 0);
+ console.log(num9);
 
-    {
-        name : "priya",
-        grade : 85
-    },
+ // 17. Find maximum number.
+ const nums9 = [1, 5, 2];
+ const num11 = nums9.reduce((a , c) => Math.max(a,c) );
+ console.log(num11);
 
-    {
-        name : "mohan",
-        grade : 100
-    },
+ // 18 Concatenate strings.
+const wordsNew = ['hi', 'there'];
+const newWord = wordsNew.reduce((a, c)=> a + " "+ c ,);
+console.log(newWord);
 
-    {
-        name : "yash",
-        grade : 65
-    },
+//  19. Count total characters in array of strings.
+ const strings = ['one', 'two'];
+ const newString = strings.reduce((a, c) => a.length + c.length);
+ console.log(newString);
 
-    {
-        name : "sukesh",
-        grade : 90
-    },
-];
+ // 21. Get a button by ID.
+  const btn = document.getElementById("mybtn");
+  console.log(btn);
 
-const studentsGrade = students.filter((x)=>{
-    if (x.grade > 90){
-        return x;
-    }
-});
-
-console.log(studentsGrade);
-
-// reduce....
-
+// 22. Change text of a heading.
+const change = document.getElementById("title").innerHTML("New");
+console.log(change);
